@@ -1,15 +1,18 @@
 public class Modelo {
+    private int id;
     private String descricao;
-    
-    // Atributos das Associacoes
     private Marca marca;
 
     public Modelo(String descricao) {
         this.descricao = descricao;
     }
-    
-    public String conModelo(){
-        return this.toString();
+
+    public int getId() {
+        return id;
+    }
+
+    public String getDescricao() {
+        return descricao;
     }
 
     public Marca getMarca() {
@@ -19,9 +22,12 @@ public class Modelo {
     public void setMarca(Marca marca) {
         this.marca = marca;
     }
-    
+
     @Override
     public String toString() {
-        return "Modelo{" + "descricao=" + descricao + '}';
-    }    
+        return "Modelo{" +
+               "descricao='" + descricao + '\'' +
+               '}';
+    }
+    
 }

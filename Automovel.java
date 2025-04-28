@@ -1,4 +1,5 @@
 public class Automovel {
+    private int id;
     private String placa;
     private long renavam;
     private String chassi;
@@ -22,24 +23,44 @@ public class Automovel {
         this.valorLocacao = valorLocacao;
     }
 
-    public long getQuilometragem() {
-        return quilometragem;
+    public int getId() {
+        return numeroPortas;
     }
 
-    public void setQuilometragem(long quilometragem) {
-        this.quilometragem = quilometragem;
+    public String getPlaca() {
+        return placa;
     }
 
-    public double getValorLocacao() {
-        return valorLocacao;
-    }
-
-    public void setValorLocacao(double valorLocacao) {
-        this.valorLocacao = valorLocacao;
+    public String getCor() {
+        return cor;
     }
 
     public Modelo getModelo() {
         return modelo;
+    }
+
+    public long getRenavam() {
+        return renavam;
+    }
+
+    public String getChassi() {
+        return chassi;
+    }
+
+    public int getNumeroPortas() {
+        return numeroPortas;
+    }
+
+    public int getTipoCombustivel() {
+        return tipoCombustivel;
+    }
+
+    public long getQuilometragem() {
+        return quilometragem;
+    }
+
+    public double getValorLocacao() {
+        return valorLocacao;
     }
 
     public void setModelo(Modelo modelo) {

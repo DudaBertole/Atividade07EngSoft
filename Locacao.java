@@ -1,46 +1,121 @@
-import java.sql.Time;
 import java.sql.Date;
+import java.sql.Time;
 
 public class Locacao {
-    private Date dt_locacao;
-    private Time hora_locacao;
-    private Date dt_devolucao;
-    private Time hora_devolucao;
-    private long quilometragem;
-    private double valor_caucao;
-    private double valor_locacao;
-    private int devolvido;
+    private int id;
+    private Cliente cliente;
+    private Automovel automovel;
+    private Date dataInicio;
+    private Date dataFim;
+    private Time horaLocacao;
+    private Time horaDevolucao;
+    private long quilometragemLocacao;
+    private long quilometragemDevolucao;
+    private double valorCaucao;
+    private double valorLocacao;
+    private boolean devolvida;
 
-    public Locacao(Date dt_locacao, Time hora_locacao, long quilometragem, double valor_caucao) {
-        this.dt_locacao = dt_locacao;
-        this.hora_locacao = hora_locacao;
-        this.quilometragem = quilometragem;
-        this.valor_caucao = valor_caucao;
+    public Locacao(Cliente cliente, Automovel automovel, Date dataInicio, Date dataFim, double valorCaucao) {
+        this.cliente = cliente;
+        this.automovel = automovel;
+        this.dataInicio = dataInicio;
+        this.dataFim = dataFim;
+        this.valorCaucao = valorCaucao;
+        this.devolvida = false;
     }
 
-    public void setDt_devolucao(Date dt_devolucao) {
-        this.dt_devolucao = dt_devolucao;
-    }
-
-    public void setHora_devolucao(Time hora_devolucao) {
-        this.hora_devolucao = hora_devolucao;
-    }
-
-    public void setValor_locacao(double valor_locacao) {
-        this.valor_locacao = valor_locacao;
-    }
-
-    public void setDevolvido(int devolvido) {
-        this.devolvido = devolvido;
-    }
-
-    public int regLoc(){
-        // Nao sei o que esse metodo deveria fazer...
-        return 1;
-    }
     
+
+    public int getId() {
+        return id;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public Automovel getAutomovel() {
+        return automovel;
+    }
+
+    public Date getDataInicio() {
+        return dataInicio;
+    }
+
+    public Date getDataFim() {
+        return dataFim;
+    }
+
+    public Time getHoraLocacao() {
+        return horaLocacao;
+    }
+
+    public Time getHoraDevolucao() {
+        return horaDevolucao;
+    }
+
+    public long getQuilometragemLocacao() {
+        return quilometragemLocacao;
+    }
+
+    public long getQuilometragemDevolucao() {
+        return quilometragemDevolucao;
+    }
+
+    public double getValorCaucao() {
+        return valorCaucao;
+    }
+
+    public double getValorLocacao() {
+        return valorLocacao;
+    }
+
+    public boolean isDevolvida() {
+        return devolvida;
+    }
+
+    public void setHoraLocacao(Time horaLocacao) {
+        this.horaLocacao = horaLocacao;
+    }
+
+    public void setHoraDevolucao(Time horaDevolucao) {
+        this.horaDevolucao = horaDevolucao;
+    }
+
+    public void setQuilometragemLocacao(long quilometragemLocacao) {
+        this.quilometragemLocacao = quilometragemLocacao;
+    }
+
+    public void setQuilometragemDevolucao(long quilometragemDevolucao) {
+        this.quilometragemDevolucao = quilometragemDevolucao;
+    }
+
+    public void setValorCaucao(double valorCaucao) {
+        this.valorCaucao = valorCaucao;
+    }
+
+    public void setValorLocacao(double valorLocacao) {
+        this.valorLocacao = valorLocacao;
+    }
+
+    public void setLocacaoDevolvida(boolean devolvida) {
+        this.devolvida = devolvida;
+    }
+
     @Override
     public String toString() {
-        return "Locacao{" + "dt_locacao=" + dt_locacao + ", hora_locacao=" + hora_locacao + ", dt_devolucao=" + dt_devolucao + ", hora_devolucao=" + hora_devolucao + ", quilometragem=" + quilometragem + ", valor_caucao=" + valor_caucao + ", valor_locacao=" + valor_locacao + ", devolvido=" + devolvido + '}';
-    }    
+        return "Locacao{" +
+               "cliente=" + cliente +
+               ", automovel=" + automovel +
+               ", dataInicio=" + dataInicio +
+               ", dataFim=" + dataFim +
+               ", valorCaucao=" + valorCaucao +
+               ", valorLocacao=" + valorLocacao +
+               ", devolvida=" + devolvida +
+               '}';
+    }
+
+    public double getValor() {
+        return valorLocacao;
+    }
 }
