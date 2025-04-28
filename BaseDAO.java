@@ -7,10 +7,10 @@ public abstract class BaseDAO {
         this.connection = connection;
     }
 
-
     protected void abrirConexao() throws SQLException {
         if (connection == null || connection.isClosed()) {
 
+            this.connection = ConnectionFactory.getConnection();
         }
     }
 

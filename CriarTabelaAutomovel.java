@@ -2,8 +2,9 @@ public class CriarTabelaAutomovel extends CriarTabela {
 
     @Override
     protected String getCreateStatement() {
-        return "CREATE TABLE IF NOT EXISTS Automovel ("
-                + "placa TEXT PRIMARY KEY,"
+        return "CREATE TABLE IF NOT EXISTS  automovel ("
+                + "id_automovel INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + "placa TEXT NOT NULL UNIQUE,"
                 + "cor TEXT,"
                 + "nroportas INTEGER,"
                 + "tipo_combustivel INTEGER,"

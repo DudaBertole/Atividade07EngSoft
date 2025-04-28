@@ -11,15 +11,15 @@ public class AutomovelDAO extends BaseDAO {
         Automovel automovel = (Automovel) objeto;
         String sql = "INSERT INTO automoveis (placa, renavam, chassi, cor, numero_portas, tipo_combustivel, quilometragem, valor_locacao, modelo_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
-            stmt.setString(1, automovel.getPlaca());  // Usando o método getPlaca
-            stmt.setLong(2, automovel.getRenavam());  // Usando o método getRenavam
-            stmt.setString(3, automovel.getChassi());  // Usando o método getChassi
-            stmt.setString(4, automovel.getCor());  // Usando o método getCor
-            stmt.setInt(5, automovel.getNumeroPortas());  // Usando o método getNumeroPortas
-            stmt.setInt(6, automovel.getTipoCombustivel());  // Usando o método getTipoCombustivel
-            stmt.setLong(7, automovel.getQuilometragem());  // Usando o método getQuilometragem
-            stmt.setDouble(8, automovel.getValorLocacao());  // Usando o método getValorLocacao
-            stmt.setLong(9, automovel.getModelo().getId());  // Usando o método getModelo() para pegar o ID do modelo
+            stmt.setString(1, automovel.getPlaca()); 
+            stmt.setLong(2, automovel.getRenavam());  
+            stmt.setString(3, automovel.getChassi());  
+            stmt.setString(4, automovel.getCor());  
+            stmt.setInt(5, automovel.getNumeroPortas());  
+            stmt.setInt(6, automovel.getTipoCombustivel());  
+            stmt.setLong(7, automovel.getQuilometragem());  
+            stmt.setDouble(8, automovel.getValorLocacao());  
+            stmt.setLong(9, automovel.getModelo().getId()); 
             stmt.executeUpdate();
         }
     }
@@ -31,7 +31,7 @@ public class AutomovelDAO extends BaseDAO {
             stmt.setLong(1, id);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
-                // Criando o Automovel com os dados recuperados
+
                 Modelo modelo = new ModeloDAO(connection).buscarPorId(rs.getLong("modelo_id"));
                 return new Automovel(
                     rs.getString("placa"),
@@ -62,7 +62,7 @@ public class AutomovelDAO extends BaseDAO {
             stmt.setLong(7, automovel.getQuilometragem());
             stmt.setDouble(8, automovel.getValorLocacao());
             stmt.setLong(9, automovel.getModelo().getId());
-            stmt.setLong(10, automovel.getId());  // Supondo que Automovel tenha um método getId()
+            stmt.setLong(10, automovel.getId());  
             stmt.executeUpdate();
         }
     }
