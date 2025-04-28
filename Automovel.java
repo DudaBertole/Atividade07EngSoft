@@ -1,41 +1,41 @@
 public class Automovel {
     private String placa;
-    private String cor;
-    private int nroportas;
-    private int tipo_combustivel;
-    private long quilometragem;
     private long renavam;
     private String chassi;
-    private double valor_locacao;
-    
-    // atributos das Associacoes
+    private String cor;
+    private int numeroPortas;
+    private int tipoCombustivel;
+    private long quilometragem;
+    private double valorLocacao;
+
     private Modelo modelo;
 
-    public Automovel(String placa, String cor, int nroportas, int tipo_combustivel, long quilometragem, long renavam, String chassi, double valor_locacao) {
+    public Automovel(String placa, long renavam, String chassi, String cor, int numeroPortas, 
+                     int tipoCombustivel, long quilometragem, double valorLocacao) {
         this.placa = placa;
-        this.cor = cor;
-        this.nroportas = nroportas;
-        this.tipo_combustivel = tipo_combustivel;
-        this.quilometragem = quilometragem;
         this.renavam = renavam;
         this.chassi = chassi;
-        this.valor_locacao = valor_locacao;
+        this.cor = cor;
+        this.numeroPortas = numeroPortas;
+        this.tipoCombustivel = tipoCombustivel;
+        this.quilometragem = quilometragem;
+        this.valorLocacao = valorLocacao;
+    }
+
+    public long getQuilometragem() {
+        return quilometragem;
     }
 
     public void setQuilometragem(long quilometragem) {
         this.quilometragem = quilometragem;
     }
 
-    public void setValor_locacao(double valor_locacao) {
-        this.valor_locacao = valor_locacao;
+    public double getValorLocacao() {
+        return valorLocacao;
     }
 
-    public double getValor_locacao() {
-        return valor_locacao;
-    }
-
-    public String conAuto(){        
-        return this.toString();
+    public void setValorLocacao(double valorLocacao) {
+        this.valorLocacao = valorLocacao;
     }
 
     public Modelo getModelo() {
@@ -44,10 +44,19 @@ public class Automovel {
 
     public void setModelo(Modelo modelo) {
         this.modelo = modelo;
-    }        
-    
+    }
+
     @Override
     public String toString() {
-        return "Automovel{" + "placa=" + placa + ", cor=" + cor + ", nroportas=" + nroportas + ", tipo_combustivel=" + tipo_combustivel + ", quilometragem=" + quilometragem + ", renavam=" + renavam + ", chassi=" + chassi + ", valor_locacao=" + valor_locacao + '}';
-    }    
+        return "Automovel{" +
+               "placa='" + placa + '\'' +
+               ", renavam=" + renavam +
+               ", chassi='" + chassi + '\'' +
+               ", cor='" + cor + '\'' +
+               ", numeroPortas=" + numeroPortas +
+               ", tipoCombustivel=" + tipoCombustivel +
+               ", quilometragem=" + quilometragem +
+               ", valorLocacao=" + valorLocacao +
+               '}';
+    }
 }
